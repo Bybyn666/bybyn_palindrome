@@ -2,7 +2,7 @@
 
 require_relative "bybyn_palindrome/version"
 
-class String
+module BybynPalindrome
 
   # Returns true for a palindrome, false otherwise.
   def palindrome?
@@ -12,6 +12,14 @@ class String
   private
   # Returns content for palindrome testing.
   def processed_content
-    scan(/[a-z]/i).join.downcase
+    to_s.scan(/[a-z1-9]/i).join.downcase
   end
+end
+
+class String 
+  include BybynPalindrome
+end
+
+class Integer 
+  include BybynPalindrome
 end
